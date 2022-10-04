@@ -8,6 +8,17 @@ int main(void)
     getchar();
     for (i = 0; i < n; i++)
     {
+        fgets(text, 82, stdin);
+        for (j = 0; text[j] != '\n'; j++)
+        {
+            int c = text[j] + k;
+            if (c > 126)
+            {
+                c -= 95;
+            }
+            text[j] = c;
+        }
+        printf("%s", text);
     }
 
     return 0;
